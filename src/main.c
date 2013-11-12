@@ -22,8 +22,8 @@ static int setuidgid( uid_t const uid, gid_t const gid ) {
 	return 0;
 }
 
-// setuid.setuid( username )
-static int luasetuid_setuid( lua_State * const L ) {
+// setuid.setuser( username )
+static int luasetuid_setuser( lua_State * const L ) {
 	char const * const username = luaL_checkstring( L, 1 );
 
 	errno = 0;
@@ -84,7 +84,7 @@ error:
 }
 
 static struct luaL_Reg const luasetuid_lib[] = {
-	{ "setuser", luasetuid_setuid },
+	{ "setuser", luasetuid_setuser },
 	{ "chroot", luasetuid_chroot },
 	{ NULL, NULL },
 };
