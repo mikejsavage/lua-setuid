@@ -10,11 +10,12 @@ lua >= 5.1
 Usage
 -----
 
-`setuid.setuid( username )`: Change the process user ID (real,
+`setuid.setuid( username )`: Change the current process user ID (real,
 effective, saved) to that of `username`.
 
 `setuid.chroot( path, username )`: `chroot` into `path`. If `username`
-is not `nil`, then change the process user ID to that of `username`. 
+is not `nil`, then change the current process user ID to that of
+`username`. 
 
 We need `setuid.chroot` to optionally accept a username for changing the
 user ID after `chroot`ing since `getpwnam` is reading password file
